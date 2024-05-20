@@ -26,9 +26,6 @@ config.swatches = {
 	default: [] // Only default used right now, object format for swatch swapping in future.
 };
 config.user_fonts = {};
-config.guides_enabled = true;
-config.guides = [];
-config.ruler_active = false;
 config.enable_autoresize_by_default = true;
 
 //requires styles in reset.css
