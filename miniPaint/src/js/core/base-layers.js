@@ -53,6 +53,7 @@ class Base_layers_class {
 		this.Helper = new Helper_class();
 		this.Image_trim = new Image_trim_class();
 
+
 		this.canvas = document.getElementById("canvas_minipaint");
 		this.ctx = document.getElementById("canvas_minipaint").getContext("2d");
 		this.ctx_preview = document
