@@ -55,7 +55,6 @@ def create_ui():
             <iframe id="a1111minipaint_iframe" src="{html.escape(html_url)}" onload = "a1111minipaint.onload()"></iframe>
             """
         )
-        gr.Markdown("Original: [miniPaint](https://github.com/viliusle/miniPaint)")
         gr.Text(str(cn_max), visible=False, elem_id="a1111minipaint_controlnet_max")
 
 def main():
