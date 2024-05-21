@@ -26,7 +26,7 @@ class GUI_preview_class {
 			return instance;
 		}
 		instance = this;
-		document.getElementById('toggle_preview').innerHTML = template;  //替换为template的内容
+		document.getElementById('toggle_preview').innerHTML = template;
 
 		// preview mini window size on right sidebar
 		this.PREVIEW_SIZE = {w: 176, h: 100};
@@ -75,26 +75,26 @@ class GUI_preview_class {
 		/*document.getElementById('zoom_range').addEventListener('input', function (e) {
 			_this.set_center_zoom();
 			_this.zoom(this.value);
-		}, false);
-		document.getElementById('zoom_range').addEventListener('change', function (e) {
+		}, false);*/
+		/*document.getElementById('zoom_range').addEventListener('change', function (e) {
 			//IE11
 			if (this.value != config.ZOOM * 100) {
 				_this.set_center_zoom();
 				_this.zoom(this.value);
 			}
-		}, false);
-		document.getElementById('zoom_less').addEventListener('click', function (e) {
+		}, false);*/
+		/*document.getElementById('zoom_less').addEventListener('click', function (e) {
 			_this.set_center_zoom();
 			_this.zoom(-1);
-		}, false);
-		document.getElementById('zoom_100').addEventListener('click', function (e) {
+		}, false);*/
+		/*document.getElementById('zoom_100').addEventListener('click', function (e) {
 			_this.zoom(100);
-		}, false);
-		document.getElementById('zoom_more').addEventListener('click', function (e) {
+		}, false);*/
+		/*document.getElementById('zoom_more').addEventListener('click', function (e) {
 			_this.set_center_zoom();
 			_this.zoom(+1);
-		}, false);
-		document.getElementById('zoom_fit').addEventListener('click', function (e) {
+		}, false);*/
+		/*document.getElementById('zoom_fit').addEventListener('click', function (e) {
 			_this.zoom_auto();
 		}, false);*/
 		document.getElementById('main_wrapper').addEventListener('wheel', function (e) {
@@ -117,7 +117,7 @@ class GUI_preview_class {
 				return;
 			_this.set_zoom_position(e);
 		}, false);
-		document.getElementById("canvas_preview").addEventListener('mousemove', function (e) {  ////和移动的平滑有关
+		document.getElementById("canvas_preview").addEventListener('mousemove', function (e) {
 			if(is_touch)
 				return;
 			if (_this.mouse_pressed == false)
@@ -194,7 +194,7 @@ class GUI_preview_class {
 			mini_rect_w,
 			mini_rect_h
 			);
-		this.canvas_preview.fillStyle = "rgba(0, 255, 0, 0.3)"; //改preview中的框框颜色
+		this.canvas_preview.fillStyle = "rgba(0, 255, 0, 0.3)";
 		this.canvas_preview.strokeStyle = "#00ff00";
 		this.canvas_preview.fill();
 		this.canvas_preview.stroke();
@@ -261,8 +261,8 @@ class GUI_preview_class {
 			config.ZOOM = Math.min(config.ZOOM, 500);
 		}
 
-		document.getElementById("zoom_100").innerHTML = Math.round(config.ZOOM * 100) + '%';
-		document.getElementById("zoom_range").value = (config.ZOOM * 100);
+		/*document.getElementById("zoom_100").innerHTML = Math.round(config.ZOOM * 100) + '%';*/
+		/*document.getElementById("zoom_range").value = (config.ZOOM * 100);*/
 
 		config.need_render = true;
 		this.GUI.prepare_canvas();
