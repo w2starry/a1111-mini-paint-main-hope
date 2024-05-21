@@ -54,16 +54,10 @@ class File_save_class {
 			if (this.Helper.is_input(event.target))
 				return;
 
-			if (code == "s") {
-				if(event.shiftKey){
-					//export
-					this.save();
-				}
-				else{
-					//save
-					this.export();
-				}
-				event.preventDefault();
+			if (code == "s" && !event.shiftKey) {
+				//save
+				this.export();
+				event.preventDefault(); //内置函数，组织默认事件的发生
 			}
 		}, false);
 	}
