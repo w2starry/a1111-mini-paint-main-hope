@@ -21,23 +21,9 @@ class Image_trim_class {
 		this.Base_gui = new Base_gui_class();
 		this.Helper = new Helper_class();
 		this.Dialog = new Dialog_class();
-				
-		this.set_events();
+
 	}
 
-	set_events() {
-		document.addEventListener('keydown', (event) => {
-			var code = event.keyCode;
-			if (this.Helper.is_input(event.target))
-				return;
-
-			if (code == 84) {
-				//trim
-				this.trim();
-				event.preventDefault();
-			}
-		}, false);
-	}
 
 	trim() {
 		var _this = this;

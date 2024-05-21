@@ -13,22 +13,8 @@ class File_quickload_class {
 		this.Base_layers = new Base_layers_class();
 		this.File_open = new File_open_class();
 
-		this.set_events();
 	}
 
-	set_events() {
-		var _this = this;
-
-		document.addEventListener('keydown', function (event) {
-			var code = event.keyCode;
-
-			if (code == 121) {
-				//F10
-				_this.quickload();
-				event.preventDefault();
-			}
-		}, false);
-	}
 
 	quickload() {
 		//load image data

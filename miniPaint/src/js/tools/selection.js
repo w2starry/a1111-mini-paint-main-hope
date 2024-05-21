@@ -77,27 +77,6 @@ class Selection_class extends Base_tools_class {
 			_this.dragEnd(event);
 		});
 
-		document.addEventListener('keydown', (e) => {
-			var code = e.keyCode;
-			if (this.Helper.is_input(e.target))
-				return;
-
-			if (code == 27) {
-				//escape
-				app.State.do_action(new app.Actions.Bundle_action('clear_selection', 'Clear Selection', this.on_leave()));
-			}
-			if (code == 46) {
-				//delete
-				if (config.TOOL.name == this.name) {
-					this.delete_selection();
-				}
-			}
-			if (code == 65 && (e.ctrlKey == true || e.metaKey)) {
-				//A
-				e.preventDefault();
-				this.select_all();
-			}
-		}, false);
 	}
 
 	dragStart(event) {

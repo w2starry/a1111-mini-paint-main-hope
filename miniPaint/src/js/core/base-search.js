@@ -27,19 +27,6 @@ class Base_search_class {
 	}
 
 	events() {
-		document.addEventListener('keydown', (event) => {
-			if (this.POP.get_active_instances() > 0) {
-				return;
-			}
-
-			var code = event.key;
-			if (code == "F3" || ( (event.ctrlKey == true || event.metaKey) && code == "f")) {
-				//open
-				this.search();
-				event.preventDefault();
-			}
-		}, false);
-
 		document.addEventListener('input', (event) => {
 			if(document.querySelector('#pop_data_search') == null){
 				return;

@@ -43,15 +43,6 @@ const menuDefinition = [
 				divider: true
 			},
 			{
-				name: 'Delete Selection',
-				shortcut: 'Del',
-				target: 'edit/selection.delete'
-			},
-			{
-				name: 'Copy Selection',
-				target: 'layer/new.new_selection'
-			},
-			{
 				name: 'Copy to Clipboard',
 				shortcut: 'Ctrl+C',
 				target: 'edit/copy.copy_to_clipboard'
@@ -60,14 +51,6 @@ const menuDefinition = [
 				name: 'Paste',
 				shortcut: 'Ctrl+V',
 				target: 'edit/paste.paste'
-			},
-			{
-				divider: true
-			},
-			{
-				name: 'Select All',
-				shortcut: 'Ctrl+A',
-				target: 'edit/selection.select_all'
 			}
 		]
 	},
