@@ -63,7 +63,7 @@ class Base_gui_class {
 		this.GUI_preview = new GUI_preview_class(this);
 		this.GUI_colors = new GUI_colors_class(this);
 		this.GUI_layers = new GUI_layers_class(this);
-		this.GUI_information = new GUI_information_class(this);
+		//this.GUI_information = new GUI_information_class(this);
 		this.GUI_details = new GUI_details_class(this);
 		this.GUI_menu = new GUI_menu_class();
 		this.Tools_translate = new Tools_translate_class();
