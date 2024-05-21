@@ -13,15 +13,6 @@ var template = `
 		<div class="transparent-grid" id="canvas_preview_background"></div>
 		<canvas width="176" height="100" class="transparent" id="canvas_preview"></canvas>
 	</div>
-	<div class="canvas_preview_details">
-		<div class="details">
-			<button title="Zoom out" class="layer_add trn" id="zoom_less"">-</button>
-			<button title="Reset zoom level"  class="layer_add trn" id="zoom_100">100%</button>
-			<button title="Zoom in" class="layer_add trn" id="zoom_more"">+</button>
-			<button title="Fit window" class="layer_add trn" id="zoom_fit">Fit</button>
-		</div>
-		<input id="zoom_range" type="range" value="100" min="50" max="1000" step="50" />
-	</div>
 `;
 
 /**
@@ -35,7 +26,7 @@ class GUI_preview_class {
 			return instance;
 		}
 		instance = this;
-		document.getElementById('toggle_preview').innerHTML = template;
+		document.getElementById('toggle_preview').innerHTML = template;  //替换为template的内容
 
 		// preview mini window size on right sidebar
 		this.PREVIEW_SIZE = {w: 176, h: 100};
@@ -81,7 +72,7 @@ class GUI_preview_class {
 		document.addEventListener('touchend', function (e) {
 			_this.mouse_pressed = false;
 		}, false);
-		document.getElementById('zoom_range').addEventListener('input', function (e) {
+		/*document.getElementById('zoom_range').addEventListener('input', function (e) {
 			_this.set_center_zoom();
 			_this.zoom(this.value);
 		}, false);
@@ -105,7 +96,7 @@ class GUI_preview_class {
 		}, false);
 		document.getElementById('zoom_fit').addEventListener('click', function (e) {
 			_this.zoom_auto();
-		}, false);
+		}, false);*/
 		document.getElementById('main_wrapper').addEventListener('wheel', function (e) {
 			//zoom with mouse scroll
 			e.preventDefault();
@@ -126,7 +117,7 @@ class GUI_preview_class {
 				return;
 			_this.set_zoom_position(e);
 		}, false);
-		document.getElementById("canvas_preview").addEventListener('mousemove', function (e) {
+		document.getElementById("canvas_preview").addEventListener('mousemove', function (e) {  ////和移动的平滑有关
 			if(is_touch)
 				return;
 			if (_this.mouse_pressed == false)
@@ -203,7 +194,7 @@ class GUI_preview_class {
 			mini_rect_w,
 			mini_rect_h
 			);
-		this.canvas_preview.fillStyle = "rgba(0, 255, 0, 0.3)";
+		this.canvas_preview.fillStyle = "rgba(0, 255, 0, 0.3)"; //改preview中的框框颜色
 		this.canvas_preview.strokeStyle = "#00ff00";
 		this.canvas_preview.fill();
 		this.canvas_preview.stroke();
