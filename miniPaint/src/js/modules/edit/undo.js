@@ -17,7 +17,7 @@ class Edit_undo_class {
 
 	events(){
 		var _this = this;
-
+        //使用 ID 选择器选择元素
 		document.querySelector('#undo_button').addEventListener('click', function (event) {
 			_this.Base_state.undo();
 		});

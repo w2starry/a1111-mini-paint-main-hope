@@ -28,7 +28,7 @@ class File_send_class {
 		this.Loader = new File_open_class();
 		this.Helper = new Helper_class();
 		window.parent.a1111minipaint.recieve = this.recieveImage
-		window.parent.a1111minipaint.createSendButton = this.createSendToMiniPaintButton
+		window.parent.a1111minipaint.createSendButton = this.createSendToSimplePaintButton //在txt2txt等增加send to minipaint的按钮
 	}
 
 	
@@ -212,15 +212,15 @@ class File_send_class {
 		window.parent.switch_to_extras()
 	}
 
-	createSendToMiniPaintButton(queryId, gallery) {
+	createSendToSimplePaintButton(queryId, gallery) {
 		var existingButton = window.parent.gradioApp().querySelector(`#${queryId} button`);
 		const FSC = new File_send_class();
 		const addButton = () => {FSC.recieveImage(gallery)}
-		if (window.parent.gradioApp().querySelector(`#${queryId}_open_in_minipaint`) == null){
-			const newButton = existingButton.cloneNode(true);
+		if (window.parent.gradioApp().querySelector(`#${queryId}_open_in_minipaint`) == null){  //检查父窗口中是否已经存在 ID 为 queryId_open_in_minipaint 的按钮，如果 queryId 的值是 "image_buttons", 则 #${queryId}_open_in_minipaint 将被解析为 #image_buttons_open_in_minipaint,动态插值
+			const newButton = existingButton.cloneNode(true);   //深度克隆一个 DOM 节点的方法
 			newButton.id = `${queryId}_open_in_minipaint`;
 			newButton.textContent = "✏️";
-			newButton.title= "Send image to miniPaint tab.";
+			newButton.title= "Send image to simplePaint tab.";
 			newButton.addEventListener("click", addButton);
 			window.parent.gradioApp().querySelector(`#${queryId} .form`).appendChild(newButton);
 		}
