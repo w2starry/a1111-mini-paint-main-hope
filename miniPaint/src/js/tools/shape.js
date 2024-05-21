@@ -27,21 +27,8 @@ class Shape_class extends Base_tools_class {
 		this.preview_width = 150;
 		this.preview_height = 120;
 
-		this.set_events();
 	}
 
-	set_events() {
-		document.addEventListener('keydown', (event) => {
-			var code = event.keyCode;
-			if (this.Helper.is_input(event.target))
-				return;
-
-			if (code == 72) {
-				//H
-				this.show_shapes();
-			}
-		}, false);
-	}
 
 	load() {
 

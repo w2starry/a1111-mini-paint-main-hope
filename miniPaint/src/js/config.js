@@ -9,7 +9,7 @@ config.WIDTH = 512;
 config.HEIGHT = 512;
 config.visible_width = null;
 config.visible_height = null;
-config.COLOR = '#000000';
+config.COLOR = '#ffffff';
 config.ALPHA = 255;
 config.ZOOM = 1;
 config.SNAP = true;
@@ -57,7 +57,7 @@ config.TOOLS = [
 	{
 		name: 'pencil',
 		attributes: {
-			size: 8,
+			size: 1,
 			pressure: false,
 		},
 	},

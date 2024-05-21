@@ -63,10 +63,6 @@ const menuDefinition = [
 				target: 'layer/new.new'
 			},
 			{
-				name: 'New from Selection',
-				target: 'layer/new.new_selection'
-			},
-			{
 				divider: true
 			},
 			{
@@ -122,18 +118,6 @@ const menuDefinition = [
 				name: 'Flatten Image',
 				target: 'layer/flatten.flatten'
 			}
-		]
-	},
-
-	{
-		name: 'Tools',
-		children: [
-			{
-				name: 'Replace Color',
-				ellipsis: true,
-				target: 'tools/replace_color.replace_color'
-			},
-
 		]
 	},
 	{
