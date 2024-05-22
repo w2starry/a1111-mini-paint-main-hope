@@ -75,15 +75,7 @@ config.TOOLS = [
 			circle: true,
 			strict: true,
 		},
-	},
-	{
-		name: 'crop',
-		on_update: 'on_params_update',
-		on_leave: 'on_leave',
-		attributes: {
-			crop: true,
-		},
-	},
+	}
 ];
 
 //link to active tool
