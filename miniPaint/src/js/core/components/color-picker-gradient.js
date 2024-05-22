@@ -11,9 +11,6 @@ var Helper = new Helper_class();
                 <div class="value_gradient"></div>
                 <div class="handle"></div>
             </div>
-            <div class="primary_pick">
-                <input aria-label="Hue" type="range" min="0" max="360" step="1" class="color_picker_thin" />
-            </div>
         </div>
     `;
 
@@ -24,36 +21,18 @@ var Helper = new Helper_class();
         if (['Left', 'ArrowLeft'].includes(key)) {
             event.preventDefault();
             set_hsv($el, {
-                h: hsv.h,
-                s: hsv.s - 1/100,
-                v: hsv.v
+                h: 0,
+                s: 0,
+                v: Math.min(1, hsv.v + 1 / 100)
             });
             $el.trigger('input');
-        }
-        else if (['Right', 'ArrowRight'].includes(key)) {
+        } else if (['Right', 'ArrowRight'].includes(key)) {
             event.preventDefault();
             set_hsv($el, {
-                h: hsv.h,
-                s: hsv.s + 1/100,
-                v: hsv.v
-            });
-            $el.trigger('input');
-        }
-        else if (['Up', 'ArrowUp'].includes(key)) {
-            event.preventDefault();
-            set_hsv($el, {
-                h: hsv.h,
-                s: hsv.s,
-                v: hsv.v + 1/100
-            });
-            $el.trigger('input');
-        }
-        else if (['Down', 'ArrowDown'].includes(key)) {
-            event.preventDefault();
-            set_hsv($el, {
-                h: hsv.h,
-                s: hsv.s,
-                v: hsv.v - 1/100
+                h: 0,
+                s: 0,
+
+                v: Math.max(0, hsv.v - 1 / 100)
             });
             $el.trigger('input');
         }
@@ -63,19 +42,22 @@ var Helper = new Helper_class();
         event.preventDefault();
         const $el = $(event.target.closest('.ui_color_picker_gradient'));
         const { secondaryPick, secondaryPickHandle, hsv } = $el.data();
+        //const clientX = event.touches && event.touches.length > 0 ? event.touches[0].clientX : event.clientX;
+        //const clientY = event.touches && event.touches.length > 0 ? event.touches[0].clientY : event.clientY;
+        //const mouseDownSecondaryPickRect = secondaryPick.getBoundingClientRect();
+
         const clientX = event.touches && event.touches.length > 0 ? event.touches[0].clientX : event.clientX;
-        const clientY = event.touches && event.touches.length > 0 ? event.touches[0].clientY : event.clientY;
         const mouseDownSecondaryPickRect = secondaryPick.getBoundingClientRect();
 
         const xRatio = (clientX - mouseDownSecondaryPickRect.left) / (mouseDownSecondaryPickRect.right - mouseDownSecondaryPickRect.left);
-        const yRatio = (clientY - mouseDownSecondaryPickRect.top) / (mouseDownSecondaryPickRect.bottom - mouseDownSecondaryPickRect.top);
+        //const yRatio = (clientY - mouseDownSecondaryPickRect.top) / (mouseDownSecondaryPickRect.bottom - mouseDownSecondaryPickRect.top);
 
         set_hsv($el, {
-            h: hsv.h,
-            s: xRatio,
-            v: 1 - yRatio
+            h: 0,
+            s: 0,
+            v: 1-xRatio
         });
-        
+
         $el.trigger('input');
 
         $el.data({
@@ -96,14 +78,21 @@ var Helper = new Helper_class();
     const generate_on_mouse_move_window = ($el) => {
         return (event) => {
             const { hsv, mouseDownSecondaryPickRect } = $el.data();
-            const clientX = event.touches && event.touches.length > 0 ? event.touches[0].clientX : event.clientX;
+            /*const clientX = event.touches && event.touches.length > 0 ? event.touches[0].clientX : event.clientX;
             const clientY = event.touches && event.touches.length > 0 ? event.touches[0].clientY : event.clientY;
             const xRatio = (clientX - mouseDownSecondaryPickRect.left) / (mouseDownSecondaryPickRect.right - mouseDownSecondaryPickRect.left);
             const yRatio = (clientY - mouseDownSecondaryPickRect.top) / (mouseDownSecondaryPickRect.bottom - mouseDownSecondaryPickRect.top);
             set_hsv($el, {
-                h: hsv.h,
-                s: xRatio,
+                h: 0,
+                s: 0,
                 v: 1 - yRatio
+            });*/
+            const clientX = event.touches && event.touches.length > 0 ? event.touches[0].clientX : event.clientX;
+            const xRatio = (clientX - mouseDownSecondaryPickRect.left) / (mouseDownSecondaryPickRect.right - mouseDownSecondaryPickRect.left);
+            set_hsv($el, {
+                h: 0,
+                s: 0,
+                v: 1-xRatio
             });
             $el.trigger('input');
         };
@@ -119,15 +108,13 @@ var Helper = new Helper_class();
 
     // All hsv values range from 0 to 1.
     const set_hsv = ($el, hsv) => {
-        const { secondaryPick, secondaryPickHandle, primaryRange } = $el.data();
-        hsv.h  = Math.max(0, Math.min(1, hsv.h));
-        hsv.s = Math.max(0, Math.min(1, hsv.s));
-        hsv.v = Math.max(0, Math.min(1, hsv.v));
+        const { secondaryPick, secondaryPickHandle} = $el.data();
+        hsv.h  = 0; //色相
+        hsv.s = 0; //饱和度，可以黑白灰变化
+        hsv.v = Math.max(0, Math.min(1, hsv.v)); //明度
         $el.data('hsv', hsv);
-        $(primaryRange).uiRange('set_value', (1 - hsv.h) * 360);
-        secondaryPick.style.background = Helper.hsvToHex(hsv.h, 1, 1);
-        secondaryPickHandle.style.left = ((hsv.s) * 100) + '%';
-        secondaryPickHandle.style.top = ((1 - hsv.v) * 100) + '%';
+        secondaryPick.style.background = `linear-gradient(to right, #ffffff 0%, #000000 100%)`; // 白到黑的背景
+        secondaryPickHandle.style.left = ((1 - hsv.v) * 100) + '%';
     };
 
     $.fn.uiColorPickerGradient = function(behavior, ...args) {
@@ -139,9 +126,9 @@ var Helper = new Helper_class();
             if (Object.prototype.toString.call(behavior) !== '[object String]') {
                 const definition = behavior || {};
 
-                const id = definition.id != null ? definition.id : el.getAttribute('id'); 
+                const id = definition.id != null ? definition.id : el.getAttribute('id');
                 const label = definition.label != null ? definition.label : el.getAttribute('aria-label');
-                const hsv = definition.hsv || { h: 0, s: 0, v: 0 };
+                const hsv = definition.hsv || { h: 0, s: 0, v: 1 };
 
                 $(el).after(template);
                 const oldEl = el;
@@ -158,26 +145,11 @@ var Helper = new Helper_class();
 
                 const $el = $(el);
 
-                const $primaryRange = $($el.find('.primary_pick input').get(0));
-                $primaryRange
-                    .uiRange({ vertical: true })
-                    .uiRange('set_background', 'linear-gradient(to bottom, #ff0000 0%, #ffff00 17%, #00ff00 33%, #00ffff 50%, #0000ff 67%, #ff00ff 83%, #ff0000 100%)')
-                    .on('input', () => {
-                        const { hsv } = $el.data();
-                        set_hsv($el, {
-                            h: 1 - ($primaryRange.uiRange('get_value') / 360),
-                            s: hsv.s,
-                            v: hsv.v
-                        });
-                        $el.trigger('input');
-                    });
-
-                $el.find('> input').uiRange();
 
                 const secondaryPick = $el.find('.secondary_pick')[0];
 
                 $el.data({
-                    primaryRange: $primaryRange[0],
+                    //primaryRange: $primaryRange[0],
                     secondaryPick,
                     secondaryPickHandle: $el.find('.secondary_pick .handle')[0],
                     hsv
@@ -194,7 +166,7 @@ var Helper = new Helper_class();
                 const $el = $(el);
                 const hsv = $el.data('hsv');
                 const newHsv = args[0];
-                if (newHsv && (hsv.h !== newHsv.h || hsv.s !== newHsv.s || hsv.v !== newHsv.v)) {
+                if (newHsv && (hsv.v !== newHsv.v)) {
                     set_hsv($(el), newHsv);
                 }
             }

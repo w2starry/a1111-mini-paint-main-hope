@@ -79,28 +79,25 @@
 \**************************/
 
 .ui_color_picker_gradient {
-    padding: 0 0 80% 0;
+    padding: 0;  /*改了*/
     position: relative;
     width: 100%;
+    height: 20px; /* 修改高度适应长条形 */
 }
 
 .ui_color_picker_gradient .primary_pick {
-    position: absolute;
-    left: 86%;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: white;
+    display: none; /* 隐藏primary_pick */
 }
 
 .ui_color_picker_gradient .secondary_pick {
     position: absolute;
     left: 0;
-    right: 17%;
+    right: 0;
     top: 0;
     bottom: 0;
     border: 1px solid var(--border-color);
-    background: green;
+    /*background: linear-gradient(to left, #ffffff 0%, #000000 100%); /* 修改背景为水平的白黑渐变 */
+    background: linear-gradient(to left, #ffffff 0%, #000000 100%); /* 修改背景为水平的白黑渐变 */
 }
 
 .ui_color_picker_gradient .secondary_pick:focus {
@@ -109,34 +106,43 @@
 }
 
 .ui_color_picker_gradient .secondary_pick .saturation_gradient {
-    position: absolute;
+    /*position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient(to right, #fff, rgba(204, 154, 129, 0));
+    background: linear-gradient(to right, #fff, rgba(204, 154, 129, 0));*/
+    display: none; /* 隐藏saturation_gradient */
 }
 
 .ui_color_picker_gradient .secondary_pick .value_gradient {
-    position: absolute;
+    /*position: absolute;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient(to top, #000, rgba(204, 154, 129, 0));
+    background: linear-gradient(to top, #000, rgba(204, 154, 129, 0));*/
+    display: none; /* 隐藏value_gradient */
 }
 
 .ui_color_picker_gradient .secondary_pick .handle {
-    position: absolute;
+    /*position: absolute;
     left: 0;
     right: auto;
     top: 0;
     bottom: auto;
+    pointer-events: none;*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
     pointer-events: none;
+    width: 1px; /* 修改handle宽度 */
+    /*background: #ffffff; /* 修改handle背景色 */
 }
 
 .ui_color_picker_gradient .secondary_pick .handle:before {
-    content: '';
+    /*content: '';
     display: block;
     position: absolute;
     left: -.6rem;
@@ -144,11 +150,21 @@
     height: .3rem;
     width: .3rem;
     border: .4rem solid #999;
+    border-radius: 1000px;*/
+    content: '';
+    display: block;
+    position: absolute;
+    left: -0.6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.3rem;
+    width: 0.3rem;
+    border: 0.4rem solid #999;
     border-radius: 1000px;
 }
 
 .ui_color_picker_gradient .secondary_pick .handle:after {
-    content: '';
+    /*content: '';
     display: block;
     position: absolute;
     left: -.5rem;
@@ -156,6 +172,16 @@
     height: .5rem;
     width: .5rem;
     border: .2rem solid white;
+    border-radius: 1000px;*/
+    content: '';
+    display: block;
+    position: absolute;
+    left: -0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 0.5rem;
+    width: 0.5rem;
+    border: 0.2rem solid white;
     border-radius: 1000px;
 }
 
@@ -165,7 +191,6 @@
 .ui_color_picker_gradient .primary_pick .ui_range:focus {
     border-color: var(--input-border-color-active);
 }
-
 /*****************\
 | UI Color Sample |
 \*****************/

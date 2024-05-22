@@ -108,16 +108,19 @@
 	border-color: var(--text-color-muted) transparent transparent transparent;
 }
 .block .content{
-	padding: 7.5px 5px;
+	padding: 15px 5px 35px;
 }
 .block_section {
-    margin: .75rem 0;
+    margin-top:0;
+
 }
 .block_section:first-child {
-    margin-top: 0;
+    margin-bottom: 0; /* 增加距离 */
+    margin-top:0;
 }
 .block_section:last-child {
     margin-bottom: 0;
+    height:0;
 }
 .error{
 	padding:20px;
