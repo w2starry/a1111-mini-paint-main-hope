@@ -65,7 +65,7 @@ class Base_state_class {
 			// Action aborted. This is usually expected behavior as actions throw errors if they shouldn't run.
 			return { status: 'aborted', reason: error };
 		}
-		// Remove all redo actions from history
+		// Remove all redo actions from history（如果历史记录中有未执行的动作，移除所有后续的动作，确保在执行新动作之前，不会存在未完成的动作）
 		if (this.action_history_index < this.action_history.length) {
 			const freed_actions = this.action_history.slice(this.action_history_index, this.action_history.length).reverse();
 			this.action_history = this.action_history.slice(0, this.action_history_index);
@@ -77,7 +77,7 @@ class Base_state_class {
 				}
 			}
 		}
-		// Add the new action to history
+		// Add the new action to history（添加新动作到历史记录中）
 		const last_action = this.action_history[this.action_history.length - 1];
 		if (options.merge_with_history && last_action) {
 			if (typeof options.merge_with_history === 'string') {

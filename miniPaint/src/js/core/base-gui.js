@@ -144,9 +144,9 @@ class Base_gui_class {
 		this.GUI_preview.render_main_preview();
 		this.GUI_colors.render_main_colors();
 		this.GUI_layers.render_main_layers();
-		this.GUI_information.render_main_information();
+		this.GUI_information.render_main_information(); //maybe 和send 有关
 		this.GUI_details.render_main_details();
-		this.GUI_menu.render_main();
+		this.GUI_menu.render_main(); //
 		this.load_saved_changes();
 
 		this.set_events();
@@ -226,7 +226,7 @@ class Base_gui_class {
 		});
 
 		document.getElementById('canvas_minipaint').addEventListener('contextmenu', function (e) {
-			e.preventDefault();
+			e.preventDefault();   //用户在这个元素上点击右键时执行，阻止默认的右键菜单弹出
 		}, false);
 	}
 

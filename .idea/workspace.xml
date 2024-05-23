@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="66f4751a-8f8a-4c00-a7f7-0faeeebb8136" name="Changes" comment="" />
+    <list default="true" id="66f4751a-8f8a-4c00-a7f7-0faeeebb8136" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/dist/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/config.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/core/base-gui.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/core/base-gui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/core/base-layers.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/core/base-layers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/core/base-state.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/core/base-state.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/core/gui/gui-layers.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/core/gui/gui-layers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/core/gui/gui-menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/core/gui/gui-menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/modules/file/save.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/modules/file/save.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/modules/layer/new.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/modules/layer/new.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/modules/layer/raster.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/modules/layer/raster.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

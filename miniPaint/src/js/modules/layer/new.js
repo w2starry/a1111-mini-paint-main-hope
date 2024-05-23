@@ -34,7 +34,7 @@ class Layer_new_class {
 
 	new() {
 		app.State.do_action(
-			new app.Actions.Insert_layer_action()
+			new app.Actions.Insert_layer_action()  //同在gui-layers下的insert等方法（它是根据容器下的点击事件触发的）
 		);
 	}
 

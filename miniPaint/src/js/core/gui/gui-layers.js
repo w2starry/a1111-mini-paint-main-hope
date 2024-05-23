@@ -46,18 +46,18 @@ class GUI_layers_class {
 
 	set_events() {
 		var _this = this;
-
+		                                                     //事件对象 event 是一个在事件发生时被传递给事件处理函数的特殊对象。它包含了关于事件的各种信息，比如事件类型、触发事件的元素、鼠标位置等等
 		document.getElementById('layers_base').addEventListener('click', function (event) {
-			var target = event.target;
+			var target = event.target;  //监听该容器内部的点击事件。当点击发生时，事件对象 event 中的 target 属性会指向被点击的具体元素
 			if (target.id == 'insert_layer') {
 				//new layer
 				app.State.do_action(
-					new app.Actions.Insert_layer_action()
+					new app.Actions.Insert_layer_action()  //实例化一个inset_layer对象，在app.state.do_action中会调用inset_layer的do方法
 				);
 			}
 			else if (target.id == 'layer_duplicate') {
 				//duplicate
-				_this.Layer_duplicate.duplicate();
+				_this.Layer_duplicate.duplicate();  //module>layer>duplicate
 			}
 			else if (target.id == 'layer_raster') {
 				//raster
@@ -126,13 +126,13 @@ class GUI_layers_class {
 	}
 
 	/**
-	 * renders layers list
+	 * renders layers list，根据 config 对象和 layers 数组动态生成 HTML 内容
 	 */
 	render_layers() {
 		var target_id = 'layers';
-		var layers = config.layers.concat().sort(
-			//sort function
-				(a, b) => b.order - a.order
+		var layers = config.layers.concat().sort(  //创建 config.layers 数组的副本，对数组副本进行排序。sort 方法接受一个比较函数
+			//sort function，内置函数               //layers数组的一个元素示例，{ name: "Layer 1", order: 2 },
+				(a, b) => b.order - a.order  //如果 b.order - a.order 为正数，则 b 排在 a 之前，从而实现降序排序
 			);
 
 		document.getElementById(target_id).innerHTML = '';
@@ -164,7 +164,7 @@ class GUI_layers_class {
 				html += '	<div class="clear"></div>';
 				html += '</div>';
 
-				//show filters
+				//show filters，模糊或滤镜等加在图层上的应用，可以忽略，此功能在界面上已删
 				if (layers[i].filters.length > 0) {
 					html += '<div class="filters">';
 					for (var j in layers[i].filters) {

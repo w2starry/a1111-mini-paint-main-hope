@@ -82,7 +82,10 @@ class File_save_class {
 	 */
 	export(){
 		var types = JSON.parse(JSON.stringify(this.SAVE_TYPES));
-		delete types.JSON;
+		delete types.WEBP;
+		delete types.GIF;
+		delete types.BMP;
+		delete types.TIFF;
 
 		this.save_general(types, 'Export');
 	}
@@ -125,9 +128,7 @@ class File_save_class {
 
 		var save_layers_types = [
 			'All',
-			'Selected',
-			'Separated',
-			'Separated (original types)',
+
 		];
 		var resolution = this.Tools_settings.get_setting('resolution');
 
@@ -140,7 +141,7 @@ class File_save_class {
 				{title: "File size:", html: '<span id="file_size">-</span>'},
 				{title: "Resolution:",  value: resolution},
 				{name: "calc_size", title: "Show file size:", value: calc_size_value},
-				{name: "layers", title: "Save layers:", values: save_layers_types},
+				{name: "layers", title: "Save layers:", html: '<span id="file_size">all</span>'}, // 已经改成隐藏掉，可以当成没有这个选项，默认all
 				{name: "delay", title: "Gif delay:", value: 400},
 			],
 			on_change: function (params, canvas_preview, w, h) {
@@ -270,7 +271,7 @@ class File_save_class {
 		else
 			document.getElementById('popup-tr-delay').style.display = 'none';
 
-		if (type == 'JSON' || type == 'GIF')
+		if (type == 'JSON' || type == 'GIF' || type == 'PNG' || type == 'JPG')
 			document.getElementById('popup-tr-layers').style.display = 'none';
 		else
 			document.getElementById('popup-tr-layers').style.display = '';

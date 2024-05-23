@@ -777,9 +777,9 @@ class Base_layers_class {
 
 		//add data
 		if (actual_area === true && link.type == "image") {
-			canvas.getContext("2d").drawImage(link.link, 0, 0);
+			canvas.getContext("2d").drawImage(link.link, 0, 0);  //image可以直接绘制图像
 		} else {
-			this.render_object(canvas.getContext("2d"), link);
+			this.render_object(canvas.getContext("2d"), link);  //调用方法，将图层内容渲染到画布上
 		}
 
 		//trim

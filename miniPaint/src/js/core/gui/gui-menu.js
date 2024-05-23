@@ -26,7 +26,7 @@ class GUI_menu_class {
 	render_main() {
 		this.menuContainer = document.getElementById('main_menu');
 
-		let menuTemplate = '<ul class="menu_bar" role="menubar" tabindex="0">';
+		let menuTemplate = '<ul class="menu_bar" role="menubar" tabindex="0">';  //只在最近的一对花括号 {} 内有效,并且不会被提升到作用域的顶部，在声明之后才可使用，而var未申明是undefined
 		for (let i = 0; i < menuDefinition.length; i++) {
 			const item = menuDefinition[i];
 			menuTemplate += this.generate_menu_bar_item_template(item, i);
@@ -36,18 +36,18 @@ class GUI_menu_class {
 		this.menuContainer.innerHTML = menuTemplate;
 		this.menuBarNode = this.menuContainer.querySelector('[role="menubar"]');
 
-		this.menuContainer.addEventListener('click', (event) => { return this.on_click_menu(event); }, true);
-		this.menuContainer.addEventListener('keydown', (event) => { return this.on_key_down_menu(event); }, true);
+		this.menuContainer.addEventListener('click', (event) => { return this.on_click_menu(event); }, true);  //点击
+		this.menuContainer.addEventListener('keydown', (event) => { return this.on_key_down_menu(event); }, true);  //按下键盘
 		this.menuBarNode.addEventListener('focus', (event) => { return this.on_focus_menu_bar(event); });
-		this.menuBarNode.addEventListener('blur', (event) => { return this.on_blur_menu_bar(event); });
+		this.menuBarNode.addEventListener('blur', (event) => { return this.on_blur_menu_bar(event); });  //为menuBarNode添加失去焦点事件监听器
 		this.menuBarNode.querySelectorAll('a').forEach((link) => {
-			link.addEventListener('focus', (event) => { return this.on_focus_menu_bar_link(event); });
+			link.addEventListener('focus', (event) => { return this.on_focus_menu_bar_link(event); });  //为menuBarNode内的所有<a>元素添加获得焦点事件监听器
 		});
-		document.body.addEventListener('mousedown', (event) => { return this.on_mouse_down_body(event); }, true);
-		document.body.addEventListener('touchstart', (event) => { return this.on_mouse_down_body(event); }, true);
+		document.body.addEventListener('mousedown', (event) => { return this.on_mouse_down_body(event); }, true);  //鼠标按下
+		document.body.addEventListener('touchstart', (event) => { return this.on_mouse_down_body(event); }, true);  //触摸开始事件监听器
 		window.addEventListener('resize', (event) => { return this.on_resize_window(event); }, true);
 
-		document.body.classList.add('loaded');
+		document.body.classList.add('loaded');  // 在document.body上添加类名“loaded”
 	}
 
 	on(eventName, callback) {
