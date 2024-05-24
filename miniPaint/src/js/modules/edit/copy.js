@@ -19,18 +19,6 @@ class Copy_class {
 		this.Helper = new Helper_class();
 		this.File_save = new File_save_class();
 
-		//events
-		document.addEventListener('keydown', (event) => {
-			var code = event.key.toLowerCase();
-			var ctrlDown = event.ctrlKey || event.metaKey;
-			if (this.Helper.is_input(event.target))
-				return;
-
-			if (code == "c" && ctrlDown == true) {
-				//copy to clipboard
-				this.copy_to_clipboard();
-			}
-		}, false);
 	}
 
 	async copy_to_clipboard(){

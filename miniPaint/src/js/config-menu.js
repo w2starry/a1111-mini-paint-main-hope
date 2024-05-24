@@ -25,19 +25,14 @@ const menuDefinition = [
 				target: 'file/save.export'
 			},
 			{
+				divider: true
+			},
+			{
 		        name: "Send",
 		        children: [
 			        {
 				        name: 'Send to Controlnet',
 				        target: 'file/send.GUISendControlnet'
-			        },
-		        	{
-		        		name: 'Send to Image2Image',
-		        		target: 'file/send.GUISendImg2img'
-		        	},
-			        {
-		        		name: 'Send to Extras',
-			        	target: 'file/send.GUISendExtras'
 			        }
 		        ]
         	}
@@ -55,19 +50,6 @@ const menuDefinition = [
 				name: 'Redo',
 				shortcut: 'Ctrl+Y',
 				target: 'edit/redo.redo'
-			},
-			{
-				divider: true
-			},
-			{
-				name: 'Copy to Clipboard',
-				shortcut: 'Ctrl+C',
-				target: 'edit/copy.copy_to_clipboard'
-			},
-			{
-				name: 'Paste',
-				shortcut: 'Ctrl+V',
-				target: 'edit/paste.paste'
 			}
 		]
 	},
