@@ -48,7 +48,7 @@ config.TOOLS = [
 		},
 	},
 	{
-		name: 'pencil',
+		name: 'brush',
 		attributes: {
 			size: 4,
 		},

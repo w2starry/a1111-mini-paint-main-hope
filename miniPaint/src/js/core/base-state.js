@@ -91,7 +91,7 @@ class Base_state_class {
 				);
 			}
 		} else {
-			this.action_history.push(action);
+			this.action_history.push(action);  //入栈
 			if (this.action_history.length > this.action_history_max) {
 				let action_to_free = this.action_history.shift();
 				try {
@@ -100,7 +100,7 @@ class Base_state_class {
 					error_during_free = true;
 				}
 			} else {
-				this.action_history_index++;
+				this.action_history_index++;  //栈的指针，指向当前的下一个
 			}
 		}
 
@@ -122,7 +122,7 @@ class Base_state_class {
 	}
 
 	can_undo() {
-		return this.action_history_index > 0;
+		return this.action_history_index > 0;  //index初始值是0，当她大于0，即最小为1时，说明之前执行过某个动作，可撤销
 	}
 
 	async redo_action() {
@@ -137,7 +137,7 @@ class Base_state_class {
 
 	async undo_action() {
 		if (this.can_undo()) {
-			this.action_history_index--;
+			this.action_history_index--;  //指向要撤销的动作
 			await this.action_history[this.action_history_index].undo();
 		} else {
 			alertify.success('There\'s nothing to undo', 3);
