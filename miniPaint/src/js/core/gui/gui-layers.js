@@ -11,11 +11,12 @@ import Layer_rename_class from './../../modules/layer/rename.js';
 import Effects_browser_class from './../../modules/effects/browser.js';
 import Layer_duplicate_class from './../../modules/layer/duplicate.js';
 import Layer_raster_class from './../../modules/layer/raster.js';
+import Layer_merge_class from './../../modules/layer/merge.js';
 
 var template = `
 	<button type="button" class="layer_add" id="insert_layer" title="Insert new layer">+</button>
-	<button type="button" class="layer_duplicate" id="layer_duplicate" title="Duplicate layer">D</button>
 	<button type="button" class="layer_raster" id="layer_raster" title="Convert layer to raster">R</button>
+	<button type="button" class="layer_raster" id="layer_merge" title="Merge Down">M</button>
 
 	<button type="button" class="layers_arrow" title="Move layer down" id="layer_down">&darr;</button>
 	<button type="button" class="layers_arrow" title="Move layer up" id="layer_up">&uarr;</button>
@@ -35,6 +36,7 @@ class GUI_layers_class {
 		this.Effects_browser = new Effects_browser_class();
 		this.Layer_duplicate = new Layer_duplicate_class();
 		this.Layer_raster = new Layer_raster_class();
+		this.Layer_merge = new Layer_merge_class();
 	}
 
 	render_main_layers() {
@@ -62,6 +64,10 @@ class GUI_layers_class {
 			else if (target.id == 'layer_raster') {
 				//raster
 				_this.Layer_raster.raster();
+			}
+			else if (target.id == 'layer_merge') {
+			    //merge
+			    _this.Layer_merge.merge();
 			}
 			else if (target.id == 'layer_up') {
 				//move layer up

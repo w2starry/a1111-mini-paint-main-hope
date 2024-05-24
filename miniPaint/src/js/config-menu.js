@@ -64,11 +64,6 @@ const menuDefinition = [
 				divider: true
 			},
 			{
-				name: 'Duplicate',
-				shortcut: 'D',
-				target: 'layer/duplicate.duplicate'
-			},
-			{
 				name: 'Show / Hide',
 				target: 'layer/visibility.toggle'
 			},
@@ -102,19 +97,11 @@ const menuDefinition = [
 				target: 'layer/rename.rename'
 			},
 			{
-				name: 'Clear',
-				target: 'layer/clear.clear'
-			},
-			{
 				divider: true
 			},
 			{
 				name: 'Merge Down',
 				target: 'layer/merge.merge'
-			},
-			{
-				name: 'Flatten Image',
-				target: 'layer/flatten.flatten'
 			}
 		]
 	},

@@ -17,22 +17,8 @@ class Layer_duplicate_class {
 		this.Base_layers = new Base_layers_class();
 		this.Helper = new Helper_class();
 
-		this.set_events();
 	}
 
-	set_events() {
-		document.addEventListener('keydown', (event) => {
-			var code = event.keyCode;
-			if (this.Helper.is_input(event.target))
-				return;
-
-			if (code == 68) {
-				//D - duplicate
-				this.duplicate();
-				event.preventDefault();
-			}
-		}, false);
-	}
 
 	duplicate() {
 		var params = JSON.parse(JSON.stringify(config.layer));
