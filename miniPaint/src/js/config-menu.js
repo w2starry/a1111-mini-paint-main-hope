@@ -28,13 +28,12 @@ const menuDefinition = [
 				divider: true
 			},
 			{
-		        name: "Send",
-		        children: [
-			        {
-				        name: 'Send to Controlnet',
-				        target: 'file/send.GUISendControlnet'
-			        }
-		        ]
+
+
+				name: 'Send to Controlnet',
+                target: 'file/send.GUISendControlnet'
+
+
         	}
 		]
 	},
