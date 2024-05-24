@@ -24,6 +24,23 @@ const menuDefinition = [
 				shortcut: 'S',
 				target: 'file/save.export'
 			},
+			{
+		        name: "Send",
+		        children: [
+			        {
+				        name: 'Send to Controlnet',
+				        target: 'file/send.GUISendControlnet'
+			        },
+		        	{
+		        		name: 'Send to Image2Image',
+		        		target: 'file/send.GUISendImg2img'
+		        	},
+			        {
+		        		name: 'Send to Extras',
+			        	target: 'file/send.GUISendExtras'
+			        }
+		        ]
+        	}
 		]
 	},
 	{
@@ -128,23 +145,6 @@ const menuDefinition = [
 				ellipsis: true,
 				target: 'help/shortcuts.shortcuts'
 			},
-		]
-	},
-	{
-		name: "Send",
-		children: [
-			{
-				name: 'Send to Controlnet',
-				target: 'file/send.GUISendControlnet'
-			},
-			{
-				name: 'Send to Image2Image',
-				target: 'file/send.GUISendImg2img'
-			},
-			{
-				name: 'Send to Extras',
-				target: 'file/send.GUISendExtras'
-			}
 		]
 	}
 ];
