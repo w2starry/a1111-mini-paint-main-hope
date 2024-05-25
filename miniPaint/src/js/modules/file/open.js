@@ -85,16 +85,16 @@ class File_open_class {
 
 		document.getElementById("tmp").innerHTML = '';
 		var a = document.createElement('input');
-		a.setAttribute("id", "file_open");
+		a.setAttribute("id", "file_load");
 		a.type = 'file';
 		a.multiple = 'multiple';
 		document.getElementById("tmp").appendChild(a);
-		document.getElementById('file_open').addEventListener('change', function (e) {
-			_this.open_handler(e);
+		document.getElementById('file_load').addEventListener('change', function (e) {
+			_this.load_handler(e);
 		}, false);
 
 		//force click
-		document.querySelector('#file_open').click();
+		document.querySelector('#file_load').click();
 	}
 	
 	open_webcam(){
@@ -258,7 +258,7 @@ class File_open_class {
 		this.POP.show(settings);
 	}
 
-	async open_handler(e) {
+	async load_handler(e) {
 		var _this = this;
 		var files = e.target.files;
 
