@@ -1,6 +1,6 @@
 import config from '../../../config.js';
 import Effects_common_class from '../abstract/css.js';
-import Dialog_class from '../../../libs/popup.js';
+import Dialog from '../../../libs/popup.js';
 import Base_layers_class from './../../../core/base-layers.js';
 import alertify from './../../../../../node_modules/alertifyjs/build/alertify.min.js';
 
@@ -8,7 +8,7 @@ class Effects_blur_class extends Effects_common_class {
 
 	constructor() {
 		super();
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Base_layers = new Base_layers_class();
 	}
 

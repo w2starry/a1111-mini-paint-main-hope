@@ -2,7 +2,7 @@ import app from './../../app.js';
 import config from './../../config.js';
 import Base_layers_class from './../../core/base-layers.js';
 import Helper_class from './../../libs/helpers.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import alertify from './../../../../node_modules/alertifyjs/build/alertify.min.js';
 import canvasToBlob from './../../../../node_modules/blueimp-canvas-to-blob/js/canvas-to-blob.min.js';
 import filesaver from './../../../../node_modules/file-saver/dist/FileSaver.min.js';
@@ -28,7 +28,7 @@ class File_save_class {
 
 		this.Base_layers = new Base_layers_class();
 		this.Helper = new Helper_class();
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Tools_settings = new Tools_settings_class();
 
 		this.set_events();

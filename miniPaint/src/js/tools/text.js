@@ -6,7 +6,7 @@ import Base_selection_class from './../core/base-selection.js';
 import Base_layers_class from './../core/base-layers.js';
 import GUI_tools_class from './../core/gui/gui-tools.js';
 import Helper_class from './../libs/helpers.js';
-import Dialog_class from './../libs/popup.js';
+import Dialog from './../libs/popup.js';
 import WebFont from 'webfontloader';
 import alertify from './../../../node_modules/alertifyjs/build/alertify.min.js';
 
@@ -1821,7 +1821,7 @@ class Text_editor_class {
 
 class Google_fonts_search_class {
 	constructor() {
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.GUI_tools = new GUI_tools_class();
 		this.popup = null;
 		this.fontsPerPage = 8;

@@ -4,7 +4,7 @@
  */
 
 import config from './../config.js';
-import Dialog_class from './../libs/popup.js';
+import Dialog from './../libs/popup.js';
 import Base_gui_class from './base-gui.js';
 const fuzzysort = require('fuzzysort');
 
@@ -19,7 +19,7 @@ class Base_search_class {
 		}
 		instance = this;
 
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Base_gui = new Base_gui_class();
 		this.db = null;
 

@@ -1,5 +1,5 @@
 import config from './../../config.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import Helper_class from './../../libs/helpers.js';
 import Base_gui_class from './../../core/base-gui.js';
 
@@ -7,7 +7,7 @@ class Tools_settings_class {
 
 	constructor() {
 		this.Base_gui = new Base_gui_class();
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Helper = new Helper_class();
 
 		this.default_units_config = {

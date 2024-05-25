@@ -1,7 +1,7 @@
 import app from './../../app.js';
 import config from './../../config.js';
 import Base_layers_class from './../../core/base-layers.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import Tools_settings_class from "../tools/settings";
 import File_save_class from './save.js';
 import File_open_class from './open.js';
@@ -22,7 +22,7 @@ class File_send_class {
 
 		this.Base_layers = new Base_layers_class();
 		this.Helper = new Helper_class();
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Tools_settings = new Tools_settings_class();
 		this.Saver = new File_save_class();
 		this.Loader = new File_open_class();

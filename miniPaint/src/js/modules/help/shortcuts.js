@@ -1,9 +1,9 @@
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 
 class Help_shortcuts_class {
 
 	constructor() {
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 	}
 
 	//shortcuts

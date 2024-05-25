@@ -5,7 +5,7 @@
  * 
  * Usage:
  * 
- * import Dialog_class from './libs/popup.js';
+ * import Dialog from './libs/popup.js';
  * var POP = new popup();
  * 
  * var settings = {
@@ -58,7 +58,7 @@ var template = `
 	</div>
 `;
 
-class Dialog_class {
+class Dialog {
 
 	constructor() {
 		if (!window.POP) {
@@ -673,4 +673,4 @@ class Dialog_class {
 
 }
 
-export default Dialog_class;
+export default Dialog;

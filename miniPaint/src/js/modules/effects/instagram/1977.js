@@ -1,13 +1,13 @@
 import app from '../../../app.js';
 import config from '../../../config.js';
-import Dialog_class from '../../../libs/popup.js';
+import Dialog from '../../../libs/popup.js';
 import Base_layers_class from '../../../core/base-layers.js';
 import alertify from 'alertifyjs/build/alertify.min.js';
 
 class Effects_1977_class {
 
 	constructor() {
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		//this.Color_matrix = new Color_matrix_class();
 		this.Base_layers = new Base_layers_class();
 	}

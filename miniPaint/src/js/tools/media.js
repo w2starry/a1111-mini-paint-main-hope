@@ -2,7 +2,7 @@ import config from './../config.js';
 import Base_tools_class from './../core/base-tools.js';
 import File_open_class from './../modules/file/open.js';
 import Tools_settings_class from './../modules/tools/settings.js';
-import Dialog_class from './../libs/popup.js';
+import Dialog from './../libs/popup.js';
 import alertify from './../../../node_modules/alertifyjs/build/alertify.min.js';
 
 class Media_class extends Base_tools_class {
@@ -11,7 +11,7 @@ class Media_class extends Base_tools_class {
 		super();
 		this.File_open = new File_open_class();
 		this.Tools_settings = new Tools_settings_class();
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.name = 'media';
 		this.cache = [];
 		this.page = 1;

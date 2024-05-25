@@ -2,7 +2,7 @@ import app from './../../app.js';
 import config from './../../config.js';
 import Base_layers_class from './../../core/base-layers.js';
 import Base_gui_class from './../../core/base-gui.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import Helper_class from './../../libs/helpers.js';
 import Clipboard_class from './../../libs/clipboard.js';
 import alertify from './../../../../node_modules/alertifyjs/build/alertify.min.js';
@@ -27,7 +27,7 @@ class File_open_class {
 		instance = this;
 
 		var _this = this;
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Base_layers = new Base_layers_class();
 		this.Base_gui = new Base_gui_class();
 		this.Helper = new Helper_class();

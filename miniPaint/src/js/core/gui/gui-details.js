@@ -5,7 +5,7 @@
 
 import app from './../../app.js';
 import config from './../../config.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import Text_class from './../../tools/text.js';
 import Base_layers_class from "../base-layers";
 import Tools_settings_class from './../../modules/tools/settings.js';
@@ -116,7 +116,7 @@ var template = `
 class GUI_details_class {
 
 	constructor() {
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Text = new Text_class();
 		this.Base_layers = new Base_layers_class();
 		this.Tools_settings = new Tools_settings_class();

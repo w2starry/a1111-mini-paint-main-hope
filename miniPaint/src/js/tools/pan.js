@@ -3,7 +3,7 @@ import config from './../config.js';
 import Base_tools_class from './../core/base-tools.js';
 import Base_layers_class from './../core/base-layers.js';
 import Helper_class from './../libs/helpers.js';
-import Dialog_class from './../libs/popup.js';
+import Dialog from './../libs/popup.js';
 import zoomView from '../libs/zoomView.js';
 
 class Pan_tool_class extends Base_tools_class {

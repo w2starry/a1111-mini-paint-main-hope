@@ -1,6 +1,6 @@
 import config from '../../../config.js';
 import Effects_common_class from '../abstract/css.js';
-import Dialog_class from '../../../libs/popup.js';
+import Dialog from '../../../libs/popup.js';
 import Effects_browser_class from '../browser.js';
 import Base_layers_class from './../../../core/base-layers.js';
 import alertify from './../../../../../node_modules/alertifyjs/build/alertify.min.js';
@@ -9,7 +9,7 @@ class Effects_brightness_class extends Effects_common_class {
 
 	constructor() {
 		super();
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Effects_browser = new Effects_browser_class();
 		this.Base_layers = new Base_layers_class();
 		this.preview_padding = 20;

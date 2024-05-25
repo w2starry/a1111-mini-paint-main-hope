@@ -1,6 +1,6 @@
 import app from './../../app.js';
 import config from './../../config.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import Base_layers_class from './../../core/base-layers.js';
 import glfx from './../../libs/glfx.js';
 import alertify from './../../../../node_modules/alertifyjs/build/alertify.min.js';
@@ -8,7 +8,7 @@ import alertify from './../../../../node_modules/alertifyjs/build/alertify.min.j
 class Effects_dotScreen_class {
 
 	constructor() {
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Base_layers = new Base_layers_class();
 		this.fx_filter = false;
 	}

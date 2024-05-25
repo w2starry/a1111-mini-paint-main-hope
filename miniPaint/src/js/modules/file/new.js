@@ -3,7 +3,7 @@ import config from './../../config.js';
 import Base_gui_class from './../../core/base-gui.js';
 import Base_layers_class from './../../core/base-layers.js';
 import Helper_class from './../../libs/helpers.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import Tools_settings_class from './../tools/settings.js';
 
 /** 
@@ -16,7 +16,7 @@ class File_new_class {
 	constructor() {
 		this.Base_gui = new Base_gui_class();
 		this.Base_layers = new Base_layers_class();
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Helper = new Helper_class();
 		this.Tools_settings = new Tools_settings_class();
 	}

@@ -1,12 +1,12 @@
 import app from './../../app.js';
 import config from './../../config.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import Base_gui_class from "../../core/base-gui.js";
 
 class Layer_composition_class {
 
 	constructor() {
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Base_gui_class = new Base_gui_class();
 	}
 

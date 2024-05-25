@@ -1,6 +1,6 @@
 import config from './../../config.js';
 import File_save_class from './save.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import alertify from './../../../../node_modules/alertifyjs/build/alertify.min.js';
 
 /** 
@@ -11,7 +11,7 @@ import alertify from './../../../../node_modules/alertifyjs/build/alertify.min.j
 class File_quicksave_class {
 
 	constructor() {
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.File_save = new File_save_class();
 
 	}

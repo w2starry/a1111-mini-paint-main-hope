@@ -1,5 +1,5 @@
 import Helper_class from './../../libs/helpers.js';
-import Dialog_class from './../../libs/popup.js';
+import Dialog from './../../libs/popup.js';
 import GUI_colors_class from './../gui/gui-colors.js';
 
 const Helper = new Helper_class();
@@ -32,7 +32,7 @@ const Helper = new Helper_class();
 		event.preventDefault();
 		const $el = $(event.target.closest('.ui_color_input'));
 		const { value } = $el.data();
-		const POP = new Dialog_class();
+		const POP = new Dialog();
 		let colorsDialog = new GUI_colors_class();
 		var settings = {
 			title: 'Color Picker',

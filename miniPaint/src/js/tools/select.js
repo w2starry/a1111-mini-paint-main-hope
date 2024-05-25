@@ -4,14 +4,14 @@ import Base_tools_class from './../core/base-tools.js';
 import Base_layers_class from './../core/base-layers.js';
 import Base_selection_class from './../core/base-selection.js';
 import Helper_class from './../libs/helpers.js';
-import Dialog_class from './../libs/popup.js';
+import Dialog from './../libs/popup.js';
 
 class Select_tool_class extends Base_tools_class {
 
 	constructor(ctx) {
 		super();
 		this.Base_layers = new Base_layers_class();
-		this.POP = new Dialog_class();
+		this.POP = new Dialog();
 		this.Helper = new Helper_class();
 		this.ctx = ctx;
 		this.name = 'select';
