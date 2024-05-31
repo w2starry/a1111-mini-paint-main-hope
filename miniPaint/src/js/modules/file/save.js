@@ -146,13 +146,6 @@ class File_save_class {
 
 		document.getElementById("pop_data_name").select();
 
-		if (calc_size == true) {
-			//calc size once
-			this.save_dialog_onchange(true);
-		}
-		else{
-			this.save_dialog_onchange(false);
-		}
 	}
 
 	save_data_url() {
