@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="66f4751a-8f8a-4c00-a7f7-0faeeebb8136" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/actions/insert-layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/actions/insert-layer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/modules/file/open.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/modules/file/open.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/mini_paint.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mini_paint.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/modules/file/save.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/modules/file/save.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +39,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "D:/a1111-mini-paint-main-original"
+    "last_opened_file_path": "D:/miniPaint"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

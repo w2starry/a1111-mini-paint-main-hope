@@ -137,48 +137,9 @@ class File_save_class {
 			params: [
 				{name: "name", title: "File name:", value: file_name},
 				{name: "type", title: "Save as type:", values: save_types, value: save_default},
-				{name: "quality", title: "Quality:", value: 90, range: [1, 100]},
-				{title: "File size:", html: '<span id="file_size">-</span>'},
-				{title: "Resolution:",  value: resolution},
-				{name: "calc_size", title: "Show file size:", value: calc_size_value},
-				{name: "layers", title: "Save layers:", html: '<span id="file_size">all</span>'}, // 已经改成隐藏掉，可以当成没有这个选项，默认all
-				{name: "delay", title: "Gif delay:", value: 400},
 			],
-			on_change: function (params, canvas_preview, w, h) {
-				_this.save_dialog_onchange(true);
-			},
-			on_finish: function (params) {
-				if (params.layers == 'Separated' || params.layers == 'Separated (original types)') {
-					var active_layer = config.layer.id;
-					var original_layer_type = params.layers;
-
-					//alter params
-					params.layers = 'Selected';
-
-					for (var i in config.layers) {
-						if (config.layers[i].visible == false)
-							continue;
-
-						//detect type
-						if (original_layer_type == 'Separated (original types)') {
-							//detect type from file name
-							params.type = _this.SAVE_TYPES[_this.default_extension];
-							for (var j in _this.SAVE_TYPES) {
-								if (_this.Helper.strpos(config.layers[i].name.toLowerCase(), '.' + j.toLowerCase()) !== false) {
-									params.type = j;
-									break;
-								}
-							}
-						}
-						
-						new app.Actions.Select_layer_action(config.layers[i].id, true).do();
-						_this.save_action(params, true);
-					}
-					new app.Actions.Select_layer_action(active_layer, true).do();
-				}
-				else {
-					_this.save_action(params);
-				}
+			on_finish: function (params) {  //当用户完成对话框操作时的回调函数
+				_this.save_action(params);
 			},
 		};
 		this.POP.show(settings);
