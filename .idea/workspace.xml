@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="66f4751a-8f8a-4c00-a7f7-0faeeebb8136" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/miniPaint/dist/bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/dist/bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniPaint/src/js/actions/insert-layer.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/actions/insert-layer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/miniPaint/src/js/modules/file/open.js" beforeDir="false" afterPath="$PROJECT_DIR$/miniPaint/src/js/modules/file/open.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/mini_paint.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/mini_paint.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +14,18 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/javascript/main.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/miniPaint/src/js/config-menu.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/miniPaint/src/js/core/base-layers.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/miniPaint/src/js/core/gui/gui-layers.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/miniPaint/src/js/modules/effects/pencil.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/miniPaint/src/js/modules/file/open.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/miniPaint/src/js/modules/file/save.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/miniPaint/src/js/modules/layer/duplicate.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/miniPaint/webpack.config.js" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/scripts/mini_paint.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -28,7 +41,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "cidr.known.project.marker": "true",
-    "last_opened_file_path": "D:/sd-webui-aki-v4.5"
+    "last_opened_file_path": "D:/a1111-mini-paint-main-original"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />

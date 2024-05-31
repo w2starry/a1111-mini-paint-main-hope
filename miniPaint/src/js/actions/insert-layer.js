@@ -29,13 +29,13 @@ export class Insert_layer_action extends Base_action {
 		this.previous_selected_layer = config.layer;
 		let autoresize_as = null;
 
-		// Default data
+		// Default data，自定义的
 		const layer = {
 			id: app.Layers.auto_increment,
 			parent_id: 0,
 			name: config.TOOL.name.charAt(0).toUpperCase() + config.TOOL.name.slice(1) + ' #' + app.Layers.auto_increment,
-			type: null,
-			link: null,
+			type: null,  //图层的类型
+			link: null,  //link: 图层的链接属性，初始设置为 null
 			x: 0,
 			y: 0,
 			width: null,
@@ -43,18 +43,18 @@ export class Insert_layer_action extends Base_action {
 			height: null,
 			height_original: null,
 			visible: true,
-			is_vector: false,
-			hide_selection_if_active: false,
+			is_vector: false,  //图层是否是矢量图层，初始设置为 false，表示不是矢量图层。
+			hide_selection_if_active: false,  //当图层处于活动状态时是否隐藏选择框，初始设置为 false
 			opacity: 100,
-			order: app.Layers.auto_increment,
-			composition: 'source-over',
+			order: app.Layers.auto_increment,  //图层的顺序，使用自增 ID 以确定图层的显示顺序
+			composition: 'source-over',  //图层的合成方式，初始设置为 source-over，这是 Canvas API 的默认合成操作
 			rotate: 0,
 			data: null,
-			params: {},
-			status: null,
-			color: config.COLOR,
-			filters: [],
-			render_function: null,
+			params: {},  //图层的参数
+			status: null,  //图层的状态
+			color: config.COLOR,  //图层的颜色
+			filters: [],  //滤镜
+			render_function: null,  //图层的渲染函数
 		};
 
 		// Build data

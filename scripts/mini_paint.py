@@ -39,7 +39,7 @@ def write_config_file() -> pathlib.Path:
 def on_ui_tabs():
     with gr.Blocks(analytics_enabled=False) as blocks:
         create_ui()
-    return [(blocks, "Mini Paint", "minipaint")]
+    return [(blocks, "Image Editor", "image_editor")]
 
 
 def create_ui():

@@ -373,7 +373,7 @@ class File_open_class {
 						var new_layer = {
 							name: this.file.name,
 							type: 'image',
-							data: event.target.result,
+							data: event.target.result, //在文件读取操作（比如通过 FileReader 对象）完成后获得的文件内容。
 							_exif: _this.extract_exif(this.file)
 						};
 						app.State.do_action(
