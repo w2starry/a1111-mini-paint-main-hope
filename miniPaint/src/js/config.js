@@ -41,13 +41,6 @@ config.themes = [
 
 config.TOOLS = [
 	{
-		name: 'select',
-		title: 'Select object tool',
-		attributes: {
-			auto_select: true,
-		},
-	},
-	{
 		name: 'brush',
 		attributes: {
 			size: 4,

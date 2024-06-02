@@ -4,7 +4,7 @@ import Base_tools_class from './../core/base-tools.js';
 import Base_layers_class from './../core/base-layers.js';
 import alertify from './../../../node_modules/alertifyjs/build/alertify.min.js';
 
-class Erase_class extends Base_tools_class {
+class Erase extends Base_tools_class {
 
 	constructor(ctx) {
 		super();
@@ -204,4 +204,4 @@ class Erase_class extends Base_tools_class {
 	}
 
 }
-export default Erase_class;
+export default Erase;

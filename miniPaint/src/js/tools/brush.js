@@ -3,7 +3,7 @@ import config from './../config.js';
 import Base_tools_class from './../core/base-tools.js';
 import Base_layers_class from './../core/base-layers.js';
 
-class Pencil_class extends Base_tools_class {
+class Brush extends Base_tools_class {
 
 	constructor(ctx) {
 		super();
@@ -64,7 +64,7 @@ class Pencil_class extends Base_tools_class {
 		
 		if (config.layer.type != this.name || params_hash != this.params_hash) {
 			//register new object - current layer is not ours or params changed
-			this.layer = {
+			this.layer = {  //在insert-layer中有default设置
 				type: this.name,
 				data: [],
 				opacity: opacity,
@@ -77,7 +77,7 @@ class Pencil_class extends Base_tools_class {
 				height: config.HEIGHT,
 				hide_selection_if_active: true,
 				rotate: null,
-				is_vector: true,
+				is_vector: true,  //矢量格式
 				color: config.COLOR
 			};
 			app.State.do_action(
@@ -303,4 +303,4 @@ class Pencil_class extends Base_tools_class {
 
 }
 
-export default Pencil_class;
+export default Brush;

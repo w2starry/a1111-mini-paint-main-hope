@@ -104,16 +104,6 @@ const menuDefinition = [
 				target: 'layer/merge.merge'
 			}
 		]
-	},
-	{
-		name: 'Help',
-		children: [
-			{
-				name: 'Keyboard Shortcuts',
-				ellipsis: true,
-				target: 'help/shortcuts.shortcuts'
-			},
-		]
 	}
 ];
 
